@@ -3306,7 +3306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168777130459910381, guid: 9b35227050697d245a6124520df4f641, type: 3}
       propertyPath: m_Name
-      value: Walls (1)
+      value: Ground Plane
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
