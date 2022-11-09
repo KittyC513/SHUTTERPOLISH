@@ -21,6 +21,7 @@ public class MonsterMovement: MonoBehaviour
         
         agent = GetComponent<NavMeshAgent>();
         Player = GameObject.FindWithTag("Player").transform;
+        playerMovement = GetComponent<PlayerMovement>();
         //bushAudio = this.GetComponent<AudioSource>();
 
     }
@@ -39,7 +40,8 @@ public class MonsterMovement: MonoBehaviour
         if(other.gameObject.tag.Equals("Frame") && Input.GetKeyDown(KeyCode.F))
         {
             Destroy(this.gameObject);
-           
+            playerMovement.audioGhost.Stop();
+            playerMovement.stop = false;
 
         }
 

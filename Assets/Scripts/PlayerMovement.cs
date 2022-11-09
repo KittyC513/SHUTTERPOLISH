@@ -46,6 +46,8 @@ public class PlayerMovement: MonoBehaviour
 
     public GameObject monster;
 
+    public bool stop;
+
 
 
 
@@ -58,7 +60,8 @@ public class PlayerMovement: MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        StartCoroutine(waitSpawner());
+        //StartCoroutine(waitSpawner());
+        StartCoroutine(waitSpawnFunction());
     }
 
     private void MovementInput()
@@ -77,6 +80,7 @@ public class PlayerMovement: MonoBehaviour
         rb.drag = groundDrag;
 
         respawn = GameObject.FindWithTag("Respawn");
+        
         spawnWait = Random.Range(minTime, maxTime);
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -108,13 +112,16 @@ public class PlayerMovement: MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Monster") && Input.GetKey(KeyCode.F))
         {
-           
+            
+            audioGhost.Stop();
+            stop = false;
             Destroy(other.gameObject);
+            
 
             //amountOfMonster--;
             Debug.Log("You Stun a Monster");
             //this.GetComponent<Health>().health--;
-            StartCoroutine(waitSpawner());
+            //StartCoroutine(waitSpawner());
 
             /*if (amountOfMonster <= 0)
             {
@@ -144,7 +151,7 @@ public class PlayerMovement: MonoBehaviour
     }
 
 
-    public IEnumerator waitSpawner()
+    /* public IEnumerator waitSpawner()
     {
 
         yield return new WaitForSeconds(startWait);
@@ -161,15 +168,34 @@ public class PlayerMovement: MonoBehaviour
             yield return new WaitForSeconds(spawnWait);
         }
 
+    } */
+
+    public IEnumerator waitSpawnFunction()
+    {
+        yield return new WaitForSeconds(startWait);
+        
+        while (!stop)
+        {
+            SpawnFunction();
+
+            GameObject monster = Instantiate(monsterPrefab[randMonster], randomPos, Quaternion.identity);
+            
+            audioGhost.Play();
+
+            stop = true;
+
+            yield return new WaitForSeconds(spawnWait);
+        }
     }
 
-    IEnumerator SelfDestruct()
+    /*IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
 
         //playerMovement.StartCoroutine(playerMovement.waitSpawner());
 
         Destroy(monster.gameObject);
+        audioGhost.Stop();
         StartCoroutine(waitSpawner());
-    }
+    }*/
 }

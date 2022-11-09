@@ -2086,13 +2086,14 @@ MonoBehaviour:
   spawnDelay: 0
   startWait: 2
   spawnWait: 0
-  minTime: 10
-  maxTime: 30
+  minTime: 7
+  maxTime: 20
   spawnCount: 1
   amountOfMonster: 0
   audioCamera: {fileID: 320562127}
   audioGhost: {fileID: 320562130}
   monster: {fileID: 0}
+  stop: 0
 --- !u!82 &320562127
 AudioSource:
   m_ObjectHideFlags: 0
