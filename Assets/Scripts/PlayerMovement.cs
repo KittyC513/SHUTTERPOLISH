@@ -48,6 +48,14 @@ public class PlayerMovement: MonoBehaviour
 
     public bool stop;
 
+    public GameObject cameraFlash;
+    public float flashTime;
+
+    public GameObject[] walls;
+    bushSound BushSound;
+
+    //MonsterMovement monsterMovement;
+
 
 
 
@@ -62,6 +70,9 @@ public class PlayerMovement: MonoBehaviour
         rb.freezeRotation = true;
         //StartCoroutine(waitSpawner());
         StartCoroutine(waitSpawnFunction());
+        //BushSound.GetComponent<bushSound>();
+
+        //monsterMovement = GetComponent<MonsterMovement>();
     }
 
     private void MovementInput()
@@ -87,6 +98,7 @@ public class PlayerMovement: MonoBehaviour
         {
             audioCamera.Play();
             Debug.Log("Sounded");
+            StartCoroutine(cameraFlashEffect());
         }
 
         monster = GameObject.FindWithTag("Monster");
@@ -114,7 +126,9 @@ public class PlayerMovement: MonoBehaviour
         {
             
             audioGhost.Stop();
+            //monsterMovement.bushAudio.Stop();
             stop = false;
+            //BushSound.bushClip.Stop();
             Destroy(other.gameObject);
             
 
@@ -198,4 +212,14 @@ public class PlayerMovement: MonoBehaviour
         audioGhost.Stop();
         StartCoroutine(waitSpawner());
     }*/
+
+
+
+    IEnumerator cameraFlashEffect()
+    {
+        cameraFlash.SetActive(true);
+        yield return new WaitForSeconds(flashTime);
+        cameraFlash.SetActive(false);
+
+    }
 }

@@ -12,6 +12,10 @@ public class MonsterMovement: MonoBehaviour
     private NavMeshAgent agent;
     PlayerMovement playerMovement;
 
+    public GameObject[] walls;
+    //public AudioSource bushAudio;
+
+
 
 
     //AudioSource bushAudio;
@@ -22,6 +26,7 @@ public class MonsterMovement: MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         Player = GameObject.FindWithTag("Player").transform;
         playerMovement = GetComponent<PlayerMovement>();
+
         //bushAudio = this.GetComponent<AudioSource>();
 
     }
@@ -41,17 +46,13 @@ public class MonsterMovement: MonoBehaviour
         {
             Destroy(this.gameObject);
             playerMovement.audioGhost.Stop();
+
+            //bushAudio.Stop();
             playerMovement.stop = false;
 
         }
 
-        /*if (other.gameObject.tag.Equals("Walls"))
-        {
-            bushAudio.Play();
-            Debug.Log("Bush Sounds");
-        }*/
-
-        
+       
     }
 
 
