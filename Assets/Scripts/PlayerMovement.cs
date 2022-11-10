@@ -49,6 +49,8 @@ public class PlayerMovement: MonoBehaviour
     public bool stop;
 
     public GameObject cameraFlash;
+
+    
     public float flashTime;
 
     public GameObject[] walls;
@@ -220,6 +222,7 @@ public class PlayerMovement: MonoBehaviour
         cameraFlash.SetActive(true);
         yield return new WaitForSeconds(flashTime);
         cameraFlash.SetActive(false);
+
 
     }
 }
