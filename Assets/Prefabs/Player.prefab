@@ -254,7 +254,7 @@ MonoBehaviour:
   isSpawned: 0
   spawnTime: 0
   spawnDelay: 0
-  startWait: 1
+  startWait: 15
   spawnWait: 0
   minTime: 15
   maxTime: 40
