@@ -130,10 +130,12 @@ public class PlayerMovement: MonoBehaviour
             
             audioGhost.Stop();
             //monsterMovement.bushAudio.Stop();
-            stop = false;
+            
             //BushSound.bushClip.Stop();
             Destroy(other.gameObject);
-            
+           
+            stop = false;
+
 
             //amountOfMonster--;
             Debug.Log("You Stun a Monster");
