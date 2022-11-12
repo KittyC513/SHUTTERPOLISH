@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 public class PlayerMovement: MonoBehaviour
 {
+    public bool isPressed;
 
     public float groundDrag;
 
@@ -56,6 +59,9 @@ public class PlayerMovement: MonoBehaviour
     public GameObject[] walls;
     bushSound BushSound;
 
+    public FixedJoystick joyStick;
+
+
     //MonsterMovement monsterMovement;
 
 
@@ -68,6 +74,7 @@ public class PlayerMovement: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = this.GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         //StartCoroutine(waitSpawner());
@@ -77,6 +84,7 @@ public class PlayerMovement: MonoBehaviour
         //monsterMovement = GetComponent<MonsterMovement>();
     }
 
+    
     private void MovementInput()
     {
         //player movement
@@ -96,17 +104,18 @@ public class PlayerMovement: MonoBehaviour
         
         spawnWait = Random.Range(minTime, maxTime);
 
-        if (Input.GetKeyDown(KeyCode.F))
+        /*if (Input.GetKeyDown(KeyCode.F))
         {
             audioCamera.Play();
             Debug.Log("Sounded");
             StartCoroutine(cameraFlashEffect());
-        }
+        }*/
 
         monster = GameObject.FindWithTag("Monster");
 
 
     }
+
 
     private void FixedUpdate()
     {
