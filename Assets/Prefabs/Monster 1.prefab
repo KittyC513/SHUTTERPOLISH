@@ -119,7 +119,7 @@ MonoBehaviour:
   walls: []
   outOfRange: 10
   runningSpeed: 10
-  walkingSpeed: 2
+  walkingSpeed: 4
 --- !u!195 &987896615305369621
 NavMeshAgent:
   m_ObjectHideFlags: 0
