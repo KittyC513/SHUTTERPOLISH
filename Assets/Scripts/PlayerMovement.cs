@@ -56,6 +56,8 @@ public class PlayerMovement: MonoBehaviour
     public GameObject[] walls;
     bushSound BushSound;
 
+    public float outOfRange;
+
     //MonsterMovement monsterMovement;
 
 
@@ -103,9 +105,8 @@ public class PlayerMovement: MonoBehaviour
             StartCoroutine(cameraFlashEffect());
         }
 
-        monster = GameObject.FindWithTag("Monster");
-
-
+        monster = GameObject.FindGameObjectWithTag("Monster");
+       
     }
 
     private void FixedUpdate()
