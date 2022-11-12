@@ -250,17 +250,24 @@ MonoBehaviour:
   orientation: {fileID: 4416099591635623546}
   speed: 10
   monsterPrefab: []
-  radius: 10
+  radius: 20
   isSpawned: 0
   spawnTime: 0
   spawnDelay: 0
   startWait: 1
   spawnWait: 0
-  minTime: 5
-  maxTime: 20
+  minTime: 15
+  maxTime: 40
   spawnCount: 1
   amountOfMonster: 0
   audioCamera: {fileID: 0}
+  audioGhost: {fileID: 0}
+  monster: {fileID: 0}
+  stop: 0
+  cameraFlash: {fileID: 0}
+  flashTime: 0
+  walls: []
+  outOfRange: 0
 --- !u!54 &4416099592216943268
 Rigidbody:
   m_ObjectHideFlags: 0
