@@ -2042,6 +2042,7 @@ GameObject:
   - component: {fileID: 320562129}
   - component: {fileID: 320562128}
   - component: {fileID: 320562130}
+  - component: {fileID: 320562131}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2094,7 +2095,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0936bd4c9bdbeef4fb1cd16799790316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   isPressed: 0
+=======
+  baseRotation: {x: 0, y: 0, z: 1, w: 0}
+>>>>>>> Stashed changes
   groundDrag: 0.2
   orientation: {fileID: 210569862}
   speed: 10
@@ -2202,7 +2207,12 @@ MonoBehaviour:
   - {fileID: 2023787538}
   - {fileID: 77990744}
   - {fileID: 1864608320}
+<<<<<<< Updated upstream
   joyStick: {fileID: 0}
+=======
+  _speed: 3.5
+  controller: {fileID: 320562131}
+>>>>>>> Stashed changes
 --- !u!82 &320562127
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2437,6 +2447,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &320562131
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320562123}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &325086697
 GameObject:
   m_ObjectHideFlags: 0
