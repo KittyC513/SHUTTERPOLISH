@@ -17,6 +17,7 @@ public class PlayerCam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         mouseX = -6;
         mouseY = -90;
     }
