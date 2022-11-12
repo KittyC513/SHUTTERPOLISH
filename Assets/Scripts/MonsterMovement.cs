@@ -15,6 +15,10 @@ public class MonsterMovement: MonoBehaviour
     public GameObject[] walls;
     //public AudioSource bushAudio;
 
+    public float outOfRange;
+    public float runningSpeed;
+    public float walkingSpeed;
+
 
 
 
@@ -35,6 +39,16 @@ public class MonsterMovement: MonoBehaviour
     void Update()
     {
         agent.SetDestination(Player.position);
+        float disMtoP = Vector3.Distance(this.transform.position, Player.transform.position);
+
+        if (disMtoP >= outOfRange)
+        {
+            agent.speed = runningSpeed;
+        }
+        else
+        {
+            agent.speed = walkingSpeed;
+        }
 
 
     }

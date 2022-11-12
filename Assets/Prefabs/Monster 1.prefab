@@ -116,7 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 4416099592216943267, guid: 7263aa456619f894c99ddd584926e6df, type: 3}
-  bushAudio: {fileID: 933269768168386321}
+  walls: []
+  outOfRange: 10
+  runningSpeed: 10
+  walkingSpeed: 2
 --- !u!195 &987896615305369621
 NavMeshAgent:
   m_ObjectHideFlags: 0
