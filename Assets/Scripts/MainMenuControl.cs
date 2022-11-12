@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuControl : MonoBehaviour
 {
+    //public AudioSource shutterClip;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //shutterClip = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -16,6 +17,7 @@ public class MainMenuControl : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.F))
         {
+            //shutterClip.Play();
             SceneManager.LoadScene(4);
         }
 
