@@ -8,12 +8,13 @@ public class PositionUpdate : MonoBehaviour
     public GameObject player;
     PlayerMovement playerMovement;
     public float waitTime;
-
+    public AudioSource takeDamageClip;
 
     // Start is called before the first frame update
     void Start()
     {
         playerMovement = player.GetComponent<PlayerMovement>();
+        takeDamageClip = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +35,7 @@ public class PositionUpdate : MonoBehaviour
             player.GetComponent<Health>().health--;
             playerMovement.audioGhost.Stop();
             playerMovement.stop = false;
+            takeDamageClip.Play();
             playerMovement.startWait = 10;
             playerMovement.StartCoroutine(playerMovement.waitSpawnFunction());
             //playerMovement.StartCoroutine(playerMovement.waitSpawner());
