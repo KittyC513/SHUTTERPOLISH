@@ -13,6 +13,7 @@ public class MonsterMovement: MonoBehaviour
     PlayerMovement playerMovement;
 
     public GameObject[] walls;
+    public float distance;
     //public AudioSource bushAudio;
 
 
@@ -36,6 +37,18 @@ public class MonsterMovement: MonoBehaviour
     {
         agent.SetDestination(Player.position);
 
+        float disBetweenMtoP = Vector3.Distance(this.transform.position, Player.transform.position);
+        if(disBetweenMtoP >= distance)
+        {
+
+            Destroy(this.gameObject);
+
+        }
+        else
+        {
+            agent.speed = 1.5f;
+        }
+
 
     }
 
@@ -44,11 +57,12 @@ public class MonsterMovement: MonoBehaviour
     {
         if(other.gameObject.tag.Equals("Frame") && Input.GetKeyDown(KeyCode.F))
         {
-            Destroy(this.gameObject);
-            playerMovement.audioGhost.Stop();
 
+
+            
+            Destroy(this.gameObject);
             //bushAudio.Stop();
-            playerMovement.stop = false;
+
 
         }
 
